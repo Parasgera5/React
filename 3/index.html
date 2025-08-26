@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    
+</body>
+
+
+<script>
+    // "use strict"; // push js to run in strict mode means apply some restrictions on js means there are some ruls and protocols that are needed to be followed by us to do work with javascript when strict mode by the keyword "use strict" is applied to it
+    // in react strict mode is always on so that if bychance your work run in development phase not give error to you when you are deploying it in the production
+    // d = 98 // nahi chalega
+
+    // d = 98 // chalega
+    
+
+
+    // var vs let vs const
+    // let -> modern javascript keyword
+    // let a;
+    // let a;
+    // error aayega kyuki do baar let a kardiya
+
+
+    // var a;
+    // var a;
+    // chal jayega
+    // no error
+
+    // const a = 3;
+    // a = 6; or const a = 6;
+    // error aayega
+
+
+    // data types -> Numbers, Objects, Booleans, Strings, undefined, null
+
+    function hello(){
+        console.log("Hello  Hye Bye Bye");
+    }
+
+    hello();
+
+    let a = {
+        x: 34,
+        y: 64,
+
+        func: function myFunc(number){
+            console.log("the number that you sended is: " + number);
+        }
+    }
+
+    console.log(a)
+    console.log(a.x)
+    console.log(a.y)
+    console.log(a.func(45));
+
+    document.addEventListener("click", function clicked(){
+        console.log("Click karat ba");
+        alert("karlo bhaiya tum bhi click");
+        let conf = confirm("Pakka click kiya hai na?");
+        console.log(conf);
+    })
+
+    let arr = [34, 21, 54]
+
+
+
+    console.log(this); // window
+
+    // function myFunc(number){
+    //     console.log(this); // error
+    // }
+    // myFunc()
+
+    const myFunc = (number) => {
+        console.log(this); // outputs window object on the console
+    }
+    myFunc()
+
+
+
+    // let obj = {
+    //     a: this,
+    //     func: (number) => {
+    //         console.log(this)
+    //     },
+        
+    //     func1: function(number){
+    //         console.log(this);
+    //     }
+
+    // }
+    // obj.func();
+    // console.log(obj.a)      
+    // both of the above statements prints object window in the output screen in the console.
+    // obj.func1() // outputs this obj object
+    
+    setTimeout(()=>{ // fires a callback after three seconds matlab jab iska time aayega ye khud ba khud chal jayega aur ha ye aage ki script block bhi nahi karega usko chalene dega.
+        console.log("hello hye bye bye");
+    }, 3000);
+    console.log("mein niche wali line hu setTimeout ke par chal pehle gayi.");
+
+
+</script>
+
+</html>
