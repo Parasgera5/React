@@ -1,0 +1,53 @@
+jsx -> ek html jisne js ka mukut pehna hua hai
+khasiyat of jsx -> hum iske andar hi js use kar sakte hai => matlab ki html bhi and js bhi
+
+jsx -> syntax extension of js in which you write html and embed js inside curly braces
+
+difference:-
+tab -> tabIndex
+class -> className
+for -> htmlFor
+
+in react,
+    when we are using jsx, we can only return only one element/block
+    means
+    return(
+        <h1>Hello Hye Bye Bye</h1>
+        <h2>Jarur</h2>
+    ) gives an error 
+    where as 
+    return(
+        <h1>Hello Hye Bye Bye</h1>
+    ) works finely
+    also
+    return(
+        <>
+            <h1>Hello Hye Bye Bye</h1>
+            <h2>Jarur</h2>
+        </>
+    ) also works finely beacause now only one component is getting returned.<></> => jsx fragmanet in place of jsx fragment we can also use div the point is that we only have to send/return one element
+
+unterminated jsx content is not allowed in jsx syntax
+
+the jsx that we write is compiled by babel into proper javascript. resolved into react.createElement call    
+
+
+
+
+
+
+import logo from './logo.svg';
+import './App.css';
+
+let name = "xyz"
+let name = "<b>xyz</b>"  -> <b>xyz</b> yahi print ho jayega html rendering nahi hogi
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Hello {name}</h1> -> {name} it is working as javascript and it gets resolved
+    </div>
+  );
+}
+
+export default App;
