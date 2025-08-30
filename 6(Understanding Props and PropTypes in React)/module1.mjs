@@ -1,0 +1,3 @@
+import kuchBhi, {b, c, d} from './module2.mjs' // why kuch bhi kyuki export default a mein se is kuchBhi mein a ki value hi aayegi module2.mjs se
+// {b, c, d} -> these are named exports these can not be any name just like we have kuchBhi for a why so? -> because a is exported as default and rest of these three like b, c, d are named exports and named exports are always imported by their names
+console.log(kuchBhi, b, c, d)
