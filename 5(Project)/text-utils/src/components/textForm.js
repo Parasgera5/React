@@ -16,6 +16,11 @@ export default function TextForm(props) {
     const handleClearClick = () => {
         setText("");   
     }
+    const handleCopy = () => {
+        let text = document.getElementById("myBox");
+        text.select();
+        navigator.clipboard.writeText(text.value);
+    }
     const handleOnChange = (event) => {
         console.log("On change");
         setText(event.target.value)
@@ -40,6 +45,7 @@ export default function TextForm(props) {
 <button className="btn btn-primary" onClick={handleUpClick}>Convert to uppercase</button>
 <button className="btn btn-primary mx-3" onClick={handleLowClick}>Convert to lowercase</button>
 <button className="btn btn-primary mx-1" onClick={handleClearClick}>Clear the text</button>
+<button className="btn btn-primary mx-1" onClick={handleCopy}>Copy the text</button>
 </div>
 
 <div className="container my-2">
