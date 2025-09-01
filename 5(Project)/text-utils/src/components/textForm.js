@@ -9,24 +9,53 @@ export default function TextForm(props) {
         let newText = text.toUpperCase();
         setText(newText);   
     }
+    const handleLowClick = () => {
+        let newText = text.toLowerCase();
+        setText(newText);   
+    }
+    const handleClearClick = () => {
+        setText("");   
+    }
     const handleOnChange = (event) => {
         console.log("On change");
         setText(event.target.value)
     }
-const [text, setText] = useState("Enter the text"); // text mein default value Enter the text aayegi and we update that through setText
+    const [text, setText] = useState("");
+// const [text, setText] = useState("Enter the text"); // text mein default value Enter the text aayegi and we update that through setText
 // text = "fasioduhfaisdfh" // wrong way to set the state
 // setText("asudjhfg") // correct way to set the state
+
+
+
+
   return (
-    <div>
-        <h1>{props.heading}</h1>
+    <>
+    <div className="container">
+        <h1>{props.heading}</h1>    
 <div className="mb-3">
   <label TextForm="myBox" className="form-label">Example textarea</label>
   <textarea className="form-control" value = {text} onChange={handleOnChange} id="myBox" rows="3"></textarea>
   {/* onChange={handleOnChange} -> without this we are unable to write inside the text area */}
 </div>
 <button className="btn btn-primary" onClick={handleUpClick}>Convert to uppercase</button>
+<button className="btn btn-primary mx-3" onClick={handleLowClick}>Convert to lowercase</button>
+<button className="btn btn-primary mx-1" onClick={handleClearClick}>Clear the text</button>
 </div>
+
+<div className="container my-2">
+    <h1>Your text summary</h1>
+    <p>{text.split(" ").length} words and {text.length} characters</p>
+    <p>{0.008 * text.split(" ").length} Minutes to read this text</p>
+    <h3>Preview</h3>
+    <p>{text}</p>
+</div>
+</>
   )
+
+
+
+
+
 }
 
 
