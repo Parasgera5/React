@@ -38,7 +38,7 @@ export default function TextForm(props) {
     <div className="container">
         <h1>{props.heading}</h1>    
 <div className="mb-3">
-  <label TextForm="myBox" className="form-label">Example textarea</label>
+  <label htmlFor="myBox" className="form-label">Example textarea</label>
   <textarea className="form-control" value = {text} onChange={handleOnChange} id="myBox" rows="3"></textarea>
   {/* onChange={handleOnChange} -> without this we are unable to write inside the text area */}
 </div>
@@ -53,7 +53,7 @@ export default function TextForm(props) {
     <p>{text.split(" ").length} words and {text.length} characters</p>
     <p>{0.008 * text.split(" ").length} Minutes to read this text</p>
     <h3>Preview</h3>
-    <p>{text}</p>
+    <p>{text.length>0?text: "enter the text to preview it here"}</p>
 </div>
 </>
   )
