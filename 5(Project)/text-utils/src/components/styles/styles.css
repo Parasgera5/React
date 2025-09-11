@@ -1,0 +1,24 @@
+.co1:hover {
+  background-color: red;
+  color: white;
+}
+
+.co2:hover {
+  background-color: blue;
+  color: white;
+}
+
+.co3:hover {
+  background-color: green;
+  color: white;
+}
+
+.co4:hover {
+  background-color: orange;
+  color: white;
+}
+
+.co5:hover {
+  background-color: white;
+  color: white;
+}
