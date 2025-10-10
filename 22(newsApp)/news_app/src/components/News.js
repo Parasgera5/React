@@ -39,9 +39,8 @@ export class News extends Component {
 
   }
 
-  async componentDidMount() { // first of all constructor will run then render and then this component did mount will run
-    console.log("cdm");
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=39132996eab44b32b4920c11b3ae03cc&page=1&pageSize=${this.props.pageSize}`;
+  async updateNews(){
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=39132996eab44b32b4920c11b3ae03cc&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url); // fetch api returns a promise
     // console.log(data); // it will be the promise => we can parse into json or convert into text
@@ -54,41 +53,66 @@ export class News extends Component {
     })
   }
 
+  
+
+  componentDidMount = async () => { // first of all constructor will run then render and then this component did mount will run
+    // console.log("cdm");
+    // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=39132996eab44b32b4920c11b3ae03cc&page=1&pageSize=${this.props.pageSize}`;
+    // this.setState({ loading: true });
+    // let data = await fetch(url); // fetch api returns a promise
+    // // console.log(data); // it will be the promise => we can parse into json or convert into text
+    // let parsedData = await data.json();
+    // console.log(parsedData);
+    // this.setState({
+    //   articles: parsedData.articles,
+    //   totalResults: parsedData.totalResults,
+    //   loading: false
+    // })
+
+    this.updateNews();
+  }
+
   handlePrevClick = async () => {
-    console.log("Previous")
+    // console.log("Previous")
 
-    // let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=39132996eab44b32b4920c11b3ae03cc&page=${this.state.page - 1}`;
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=39132996eab44b32b4920c11b3ae03cc&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
-    this.setState({ loading: true });
-    let data = await fetch(url); // fetch api returns a promise
-    // console.log(data); // it will be the promise => we can parse into json or convert into text
-    let parsedData = await data.json();
-    console.log(parsedData);
+    // // let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=39132996eab44b32b4920c11b3ae03cc&page=${this.state.page - 1}`;
+    // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=39132996eab44b32b4920c11b3ae03cc&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
+    // this.setState({ loading: true });
+    // let data = await fetch(url); // fetch api returns a promise
+    // // console.log(data); // it will be the promise => we can parse into json or convert into text
+    // let parsedData = await data.json();
+    // console.log(parsedData);
 
-    this.setState({
-      page: this.state.page - 1,
-      articles: parsedData.articles,
-      loading: false
-    })
+    // this.setState({
+    //   page: this.state.page - 1,
+    //   articles: parsedData.articles,
+    //   loading: false
+    // })
+
+    this.setState({page: this.state.page - 1});
+    this.updateNews();
   }
   handleNextClick = async () => {
-    console.log("Next")
+    // console.log("Next")
 
-    if (!(this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize))) {
+    // if (!(this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize))) {
 
-      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=39132996eab44b32b4920c11b3ae03cc&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
-      this.setState({ loading: true });
-      let data = await fetch(url); // fetch api returns a promise
-      // console.log(data); // it will be the promise => we can parse into json or convert into text
-      let parsedData = await data.json();
-      console.log(parsedData);
-      // this.setState({loading: false});
-      this.setState({
-        page: this.state.page + 1,
-        articles: parsedData.articles,
-        loading: false
-      })
-    }
+    //   let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=39132996eab44b32b4920c11b3ae03cc&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
+    //   this.setState({ loading: true });
+    //   let data = await fetch(url); // fetch api returns a promise
+    //   // console.log(data); // it will be the promise => we can parse into json or convert into text
+    //   let parsedData = await data.json();
+    //   console.log(parsedData);
+    //   // this.setState({loading: false});
+    //   this.setState({
+    //     page: this.state.page + 1,
+    //     articles: parsedData.articles,
+    //     loading: false
+    //   })
+    // }
+
+    this.setState({page: this.state.page + 1});
+    this.updateNews();
   }
 
   render() {
