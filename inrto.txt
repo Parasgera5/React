@@ -1,0 +1,21 @@
+react is a js library, used to make ui -> frontend.
+it is used to make complex frontend.
+made by meta(facebook) -> 2013 mein banaya.
+
+when users increase on facebook, as the ui is from html, css and js -> the problem is that we have to reload the entire website for a change => pura page reload karna padta tha every time to see any updates.
+react ne bola sabkuch component based architecture pe le jayenge -> means if i want to make changes in the current subscribers -> we just need to update that specific region instead of reloading the hole page.
+
+libraries are used to give features to a particular website. eg, -> gsap(animation), lenis(smooth scrolling), react js(used to make ui of a website).
+
+framework -> used to make everything. subkuch inbuilt mila lhia banta hai -> next js, angular js
+
+
+function hello(){
+    console.log("Hello World");
+}
+below given dono tarike se react mein ye call ho jayega
+hello()
+<hello/>
+
+vite -> bundler - saare folders bana deta hai khud hi.
+create react app -|> pehle use hota tha
