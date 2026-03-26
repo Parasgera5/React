@@ -1,0 +1,13 @@
+.parent{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.btn{
+    border: 2px solid black;
+    border-radius: 7px;
+    background-color: rgb(201, 93, 93);
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    cursor: pointer;
+}
