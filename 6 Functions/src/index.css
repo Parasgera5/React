@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body{
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+.box{
+  height: 200px;
+  width: 200px;
+  background-color: crimson;
+}
+.page1{
+  height: 500px;
+  width: 500px;
+  background-color: #4c2e2e;
+}
+.page2{
+  height: 500px;
+  width: 500px;
+  background-color: #26b721;
+}
+.page3{
+  height: 500px;
+  width: 500px;
+  background-color: #273aa4;
+}
