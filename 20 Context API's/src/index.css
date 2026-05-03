@@ -1,0 +1,20 @@
+html, body{
+  height: 100%;
+  width: 100%;
+  background-color: #282c34;
+  color: white;
+}
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #20232a;
+  height: 50px;
+  padding: 20px 40px;
+}
+.nav2{
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
